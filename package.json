@@ -15,9 +15,6 @@
 		"rich text editor",
 		"rte"
 	],
-	"dependencies": {
-		"jodit": "https://github.com/Plactom/jodit"
-	},
 	"peerDependencies": {
 		"react": "~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
 		"react-dom": "~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
@@ -78,5 +75,8 @@
 			"git add"
 		]
 	},
-	"homepage": "https://xdsoft.net/jodit/"
+	"homepage": "https://xdsoft.net/jodit/",
+	"dependencies": {
+		"jodit": "github:Plactom/jodit"
+	}
 }

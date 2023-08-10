@@ -1,0 +1,115 @@
+Arguments: 
+  /home/renato2/.asdf/installs/nodejs/16.16.0/bin/node /usr/local/bin/yarn remove jodit-react
+
+PATH: 
+  /home/renato2/.asdf/plugins/nodejs/shims:/home/renato2/.asdf/installs/nodejs/16.16.0/bin:/home/renato2/.asdf/shims:/home/renato2/.asdf/bin:/home/renato2/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/renato2/Android/Sdk/emulator:/home/renato2/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: Failed to replace env in config: ${NPM_TOKEN}
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:94933:13
+      at String.replace (<anonymous>)
+      at envReplace (/usr/local/lib/node_modules/yarn/lib/cli.js:94928:16)
+      at Function.normalizeConfig (/usr/local/lib/node_modules/yarn/lib/cli.js:31938:69)
+      at NpmRegistry.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:31968:34)
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+  	"name": "jodit-react",
+  	"version": "2.0.1-beta.12",
+  	"description": "Jodit is awesome and usefully wysiwyg editor with filebrowser",
+  	"main": "build/jodit-react.js",
+  	"author": "Chupurnov <chupurnov@gmail.com> (https://xdsoft.net/)s",
+  	"keywords": [
+  		"react",
+  		"jodit",
+  		"html",
+  		"text",
+  		"editor",
+  		"wysisyg",
+  		"rich editor",
+  		"rich text editor",
+  		"rte"
+  	],
+  	"peerDependencies": {
+  		"react": "~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+  		"react-dom": "~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+  	},
+  	"devDependencies": {
+  		"@babel/core": "^7.22.5",
+  		"@babel/eslint-parser": "^7.22.5",
+  		"@babel/preset-env": "^7.22.5",
+  		"@babel/preset-react": "^7.22.5",
+  		"@types/react": "^18.2.14",
+  		"@typescript-eslint/eslint-plugin": "^5.60.1",
+  		"@typescript-eslint/parser": "^5.60.1",
+  		"babel": "^6.23.0",
+  		"babel-cli": "^6.26.0",
+  		"babel-loader": "^9.1.2",
+  		"babel-plugin-transform-class-properties": "^6.24.1",
+  		"css-loader": "^6.8.1",
+  		"eslint": "8.43.0",
+  		"eslint-config-prettier": "^8.8.0",
+  		"eslint-plugin-prettier": "^4.2.1",
+  		"eslint-plugin-react": "^7.32.2",
+  		"eslint-plugin-react-hooks": "^4.6.0",
+  		"husky": "^8.0.3",
+  		"lint-staged": "^13.2.3",
+  		"prettier": "^2.8.8",
+  		"react": "^18.2.0",
+  		"react-dom": "^18.2.0",
+  		"style-loader": "^3.3.3",
+  		"webpack": "^5.88.1",
+  		"webpack-cli": "^5.1.4",
+  		"webpack-dev-server": "^4.15.1"
+  	},
+  	"scripts": {
+  		"newversion": "npm run lint && npm update && rm -rf build/ && npm run build && npm version prerelease --preid=beta --no-git-tag-version && npm run github",
+  		"lint": "eslint ./",
+  		"demo": "cd examples && export NODE_ENV=development && webpack serve --config ./webpack.config.js --mode development",
+  		"start": "npm run demo",
+  		"build": "export NODE_ENV=production && webpack --mode production",
+  		"github": "npm run git && git push --tags origin HEAD:master",
+  		"git": "git add --all  && git commit -m \"New version $npm_package_version. Read more https://github.com/jodit/jodit-react/releases/tag/$npm_package_version \" && git tag $npm_package_version"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "git+https://github.com/jodit/jodit-react.git"
+  	},
+  	"license": "MIT",
+  	"bugs": {
+  		"url": "https://github.com/jodit/jodit-react/issues"
+  	},
+  	"husky": {
+  		"hooks": {
+  			"pre-commit": "lint-staged"
+  		}
+  	},
+  	"lint-staged": {
+  		"**/*.js": [
+  			"eslint ./ --fix",
+  			"git add"
+  		]
+  	},
+  	"homepage": "https://xdsoft.net/jodit/",
+  	"dependencies": {
+  		"jodit": "file:../jodit"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
